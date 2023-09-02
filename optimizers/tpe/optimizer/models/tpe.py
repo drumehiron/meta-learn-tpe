@@ -41,7 +41,7 @@ class TPE(BaseTPE):
         if results is None:
             loss_vals = self._observations[self._objective_name]
         else:
-            loss_vals = np.append(self._observations[self._objective_name], results[self._objective_name])
+            loss_vals = np.append(self._observations[self._objective_name], results[0][self._objective_name])
 
         self._order = np.argsort(loss_vals)
         return self._order

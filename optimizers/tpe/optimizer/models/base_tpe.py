@@ -143,7 +143,7 @@ class BaseTPE(AbstractTPE, metaclass=ABCMeta):
         order = self._calculate_order(results)
 
         for objective_name in self._objective_names:
-            metric_val = results[objective_name]
+            metric_val = results[0][objective_name]
             self._observations[objective_name] = np.append(self._observations[objective_name], metric_val)
             self._sorted_observations[objective_name] = self._observations[objective_name][order]
 
